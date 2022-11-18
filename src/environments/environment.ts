@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://lunch-api.subho.xyz"
+  apiUrl: "https://lunch-api.subho.xyz",
+  jwtTokenIss: "lunch-booking"
 };
 
 /*

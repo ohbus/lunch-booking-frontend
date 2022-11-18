@@ -11,6 +11,14 @@ import { MealService } from "./_services/meal.service";
 import { TokenStorageService } from "./_services/token-storage.service";
 import { UserService } from "./_services/user.service";
 import { HttpClientModule } from "@angular/common/http";
+import { NgProgressModule } from "ngx-progressbar";
+import { NgProgressHttpModule } from "ngx-progressbar/http";
+import { NgProgressRouterModule } from "ngx-progressbar/router";
+import { RouterModule } from "@angular/router";
+import { FormsModule } from "@angular/forms";
+import { NotificationService } from "./_services/notification.service";
+import { EventBusService } from "./_services/event-bus.service";
+import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule ({
   declarations: [
@@ -20,7 +28,21 @@ import { HttpClientModule } from "@angular/common/http";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgProgressModule.withConfig({
+      trickleSpeed: 100,
+      min: 20,
+      color: "yellow",
+      thick: true
+    }),
+    NgProgressHttpModule.withConfig({
+      silentApis: ['check']
+    }),
+    RouterModule,
+    NgProgressRouterModule,
+
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthService,
@@ -28,6 +50,9 @@ import { HttpClientModule } from "@angular/common/http";
     IntraAppService,
     MealService,
     TokenStorageService,
+    UserService,
+    NotificationService,
+    EventBusService,
     UserService
   ],
   bootstrap: [ AppComponent ]
