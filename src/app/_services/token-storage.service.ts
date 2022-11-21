@@ -134,11 +134,14 @@ export class TokenStorageService {
   }
 
   public isLoginValid(): boolean {
-    const expTime = localStorage.getItem(EXPIRY_AT);
-    if (expTime) {
-      const currentTime = Date.now();
-      console.debug("Token has not expired");
-      return currentTime <= parseInt(expTime);
+    const jwt = localStorage.getItem(JWT_KEY);
+    if (jwt) {
+      const expTime = this.getDecodedJwt(jwt).exp;
+      if (expTime) {
+        const currentTime = Date.now() / 1000;
+        console.debug("Token has not expired");
+        return currentTime <= expTime;
+      }
     }
     console.warn("Expiry Time is not present");
     return false;

@@ -20,9 +20,18 @@ export class HttpRequestInterceptor implements HttpInterceptor {
   constructor(private storageService: TokenStorageService, private eventBusService: EventBusService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    req = req.clone({
-      withCredentials: true,
-    });
+
+    if (this.storageService.isLoginValid()) {
+      const token = this.storageService.getJwt();
+      if (token) {
+        req = req.clone({
+          headers: req.headers.set(
+            'Authorization',
+            `Bearer ${token}`
+          )
+        });
+      }
+    }
 
     return next.handle(req).pipe(
       catchError((error) => {
@@ -50,6 +59,8 @@ export class HttpRequestInterceptor implements HttpInterceptor {
   }
 }
 
-export const httpInterceptorProviders = [
-  { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true },
-];
+export const httpInterceptorProviders = [{
+  provide: HTTP_INTERCEPTORS,
+  useClass: HttpRequestInterceptor,
+  multi: true
+}];
