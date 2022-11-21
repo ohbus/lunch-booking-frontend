@@ -24,6 +24,7 @@
     "@auth0/angular-jwt": "^5.1.0",
     "@zxing/browser": "^0.1.1",
     "@zxing/library": "^0.19.1",
+    "@zxing/ngx-scanner": "^3.8.0",
     "angularx-qrcode": "^15.0.0",
     "jwt-decode": "^3.1.2",
     "ngx-progressbar": "^9.0.0",
