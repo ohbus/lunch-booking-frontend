@@ -2,24 +2,24 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserComponent } from './user.component';
 
-describe ('UserComponent', () => {
+describe('UserComponent', () => {
   let component: UserComponent;
   let fixture: ComponentFixture<UserComponent>;
 
-  beforeEach (async () => {
-    await TestBed.configureTestingModule ({
-      declarations: [ UserComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [UserComponent]
     })
-      .compileComponents ();
+      .compileComponents();
   });
 
-  beforeEach (() => {
-    fixture = TestBed.createComponent (UserComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(UserComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges ();
+    fixture.detectChanges();
   });
 
-  it ('should create', () => {
-    expect (component).toBeTruthy ();
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

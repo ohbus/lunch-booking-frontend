@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 
-const routes: Routes = [ {
+const routes: Routes = [{
   path: '',
   component: HomeComponent
 }, {
@@ -18,11 +18,11 @@ const routes: Routes = [ {
 }, {
   path: 'admin-users',
   loadChildren: () => import('./admin-users/admin-users.module').then(m => m.AdminUsersModule)
-} ];
+}];
 
-@NgModule ({
-  imports: [ RouterModule.forChild (routes) ],
-  exports: [ RouterModule ]
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class HomeRoutingModule {
 }

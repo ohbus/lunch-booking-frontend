@@ -9,17 +9,19 @@ import { LoginResponseModel } from "../_models/login-response-model";
 
 const USER_KEY = 'auth-user';
 const JWT_KEY = 'jwt-key';
+const JWT_KEY_DECODED = 'jwt-key-decoded';
 const USER_ROLES = 'user-roles';
 const LOGGED_USER_ID = 'user-id';
 const EXPIRY_AT = 'expiry-at';
 const JWT_ISS = environment.jwtTokenIss;
 
-@Injectable ({
+@Injectable({
   providedIn: 'root'
 })
 export class TokenStorageService {
 
-  constructor() {}
+  constructor() {
+  }
 
   clean(): void {
     localStorage.clear();
@@ -31,10 +33,28 @@ export class TokenStorageService {
 
   public saveLoginDetails(loginResponse: LoginResponseModel): void {
     this.saveUser(loginResponse.user);
-    this.saveJwt(new JwtTokenModel(loginResponse.jwtToken));
-    this.saveUserId(loginResponse.jwtToken);
-    this.saveExpiryAt(loginResponse.jwtToken);
-    this.saveUserRoles(loginResponse.jwtToken);
+
+    const jwt = loginResponse.jwtToken;
+    this.saveJwt(new JwtTokenModel(jwt));
+    this.saveUserId(jwt);
+    this.saveExpiryAt(jwt);
+    this.saveUserRoles(jwt);
+    this.saveDecodedJwt(jwt);
+  }
+
+  public saveDecodedJwt(jwt: string): void {
+    const decodedJwt = this.getDecodedJwt(jwt);
+    console.debug("Decoded JWT: ", decodedJwt);
+    localStorage.setItem(JWT_KEY_DECODED, JSON.stringify(decodedJwt));
+  }
+
+  public getDecodedJwtFromStorage(): LunchBookingJwtPayload | null {
+    const token = localStorage.getItem(JWT_KEY_DECODED);
+    if (token) {
+      return JSON.parse(token);
+    }
+    console.warn("Decoded JWT Token not available");
+    return null;
   }
 
   public saveUserId(jwt: string): void {
@@ -134,9 +154,9 @@ export class TokenStorageService {
   }
 
   public isLoginValid(): boolean {
-    const jwt = localStorage.getItem(JWT_KEY);
-    if (jwt) {
-      const expTime = this.getDecodedJwt(jwt).exp;
+    const jwtDecoded = this.getDecodedJwtFromStorage();
+    if (jwtDecoded) {
+      const expTime = jwtDecoded.exp;
       if (expTime) {
         const currentTime = Date.now() / 1000;
         console.debug("Token has not expired");

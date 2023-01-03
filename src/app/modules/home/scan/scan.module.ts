@@ -5,7 +5,7 @@ import { ScanRoutingModule } from './scan-routing.module';
 import { ScanComponent } from './scan.component';
 
 
-@NgModule ({
+@NgModule({
   declarations: [
     ScanComponent
   ],

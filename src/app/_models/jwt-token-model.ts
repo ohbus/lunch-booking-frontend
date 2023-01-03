@@ -1,6 +1,6 @@
 export class JwtTokenModel {
-  constructor (
-    public jwtToken: string
+  constructor(
+    public jwtToken: string = ""
   ) {
   }
 }

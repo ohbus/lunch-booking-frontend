@@ -9,7 +9,8 @@ export class EventBusService {
 
   private subject$ = new Subject<EventDataModel>();
 
-  constructor() { }
+  constructor() {
+  }
 
   emit(event: EventDataModel) {
     this.subject$.next(event);

@@ -10,13 +10,13 @@ import { MatButtonModule } from "@angular/material/button";
 import { FormsModule } from "@angular/forms";
 
 
-@NgModule ({
-    declarations: [
-        LoginComponent
-    ],
-    exports: [
-        LoginComponent
-    ],
+@NgModule({
+  declarations: [
+    LoginComponent
+  ],
+  exports: [
+    LoginComponent
+  ],
   imports: [
     CommonModule,
     LoginRoutingModule,

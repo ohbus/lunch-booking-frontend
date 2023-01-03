@@ -2,24 +2,24 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScanComponent } from './scan.component';
 
-describe ('ScanComponent', () => {
+describe('ScanComponent', () => {
   let component: ScanComponent;
   let fixture: ComponentFixture<ScanComponent>;
 
-  beforeEach (async () => {
-    await TestBed.configureTestingModule ({
-      declarations: [ ScanComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ScanComponent]
     })
-      .compileComponents ();
+      .compileComponents();
   });
 
-  beforeEach (() => {
-    fixture = TestBed.createComponent (ScanComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ScanComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges ();
+    fixture.detectChanges();
   });
 
-  it ('should create', () => {
-    expect (component).toBeTruthy ();
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

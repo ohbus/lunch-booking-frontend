@@ -2,24 +2,24 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminUsersComponent } from './admin-users.component';
 
-describe ('AdminUsersComponent', () => {
+describe('AdminUsersComponent', () => {
   let component: AdminUsersComponent;
   let fixture: ComponentFixture<AdminUsersComponent>;
 
-  beforeEach (async () => {
-    await TestBed.configureTestingModule ({
-      declarations: [ AdminUsersComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [AdminUsersComponent]
     })
-      .compileComponents ();
+      .compileComponents();
   });
 
-  beforeEach (() => {
-    fixture = TestBed.createComponent (AdminUsersComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AdminUsersComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges ();
+    fixture.detectChanges();
   });
 
-  it ('should create', () => {
-    expect (component).toBeTruthy ();
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

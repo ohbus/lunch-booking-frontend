@@ -4,12 +4,11 @@ import { Router } from "@angular/router";
 import { LoginRequestModel } from "../../_models/login-request-model";
 import { AuthService } from "../../_services/auth.service";
 import { NotificationService } from "../../_services/notification.service";
-import { ErrorModel } from "../../_models/error-model";
 
-@Component ({
+@Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: [ './login.component.css' ]
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -17,13 +16,13 @@ export class LoginComponent implements OnInit {
 
   loginRequest: LoginRequestModel = new LoginRequestModel("", "");
 
-  constructor (private tokenService: TokenStorageService,
-               private router: Router,
-               private authService: AuthService,
-               private notificationService: NotificationService) {
+  constructor(private tokenService: TokenStorageService,
+              private router: Router,
+              private authService: AuthService,
+              private notificationService: NotificationService) {
   }
 
-  ngOnInit (): void {
+  ngOnInit(): void {
     if (this.tokenService.isLoginValid()) {
       this.router.navigate(['/home'])
         .then(r => console.debug("Login is Valid. ", r));

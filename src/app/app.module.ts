@@ -22,7 +22,7 @@ import { EventBusService } from "./_services/event-bus.service";
 import { httpInterceptorProviders } from "./_helpers/http.interceptor";
 import { LoginModule } from "./modules/login/login.module";
 
-@NgModule ({
+@NgModule({
   declarations: [
     AppComponent
   ],
@@ -42,10 +42,7 @@ import { LoginModule } from "./modules/login/login.module";
     }),
     RouterModule,
     NgProgressRouterModule,
-
-
     FormsModule,
-
     MatSnackBarModule,
     LoginModule
   ],
@@ -61,7 +58,7 @@ import { LoginModule } from "./modules/login/login.module";
     EventBusService,
     UserService
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

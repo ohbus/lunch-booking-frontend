@@ -6,15 +6,15 @@ import { HomeComponent } from './home.component';
 import { FormsModule } from "@angular/forms";
 
 
-@NgModule ({
+@NgModule({
   declarations: [
     HomeComponent
   ],
-    imports: [
-        CommonModule,
-        HomeRoutingModule,
-        FormsModule
-    ]
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    FormsModule
+  ]
 })
 export class HomeModule {
 }

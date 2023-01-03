@@ -2,24 +2,24 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminMealComponent } from './admin-meal.component';
 
-describe ('AdminMealComponent', () => {
+describe('AdminMealComponent', () => {
   let component: AdminMealComponent;
   let fixture: ComponentFixture<AdminMealComponent>;
 
-  beforeEach (async () => {
-    await TestBed.configureTestingModule ({
-      declarations: [ AdminMealComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [AdminMealComponent]
     })
-      .compileComponents ();
+      .compileComponents();
   });
 
-  beforeEach (() => {
-    fixture = TestBed.createComponent (AdminMealComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AdminMealComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges ();
+    fixture.detectChanges();
   });
 
-  it ('should create', () => {
-    expect (component).toBeTruthy ();
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

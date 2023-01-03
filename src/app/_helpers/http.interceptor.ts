@@ -17,7 +17,10 @@ export class HttpRequestInterceptor implements HttpInterceptor {
 
   private isRefreshing = false;
 
-  constructor(private storageService: TokenStorageService, private eventBusService: EventBusService) { }
+  constructor(
+    private storageService: TokenStorageService,
+    private eventBusService: EventBusService) {
+  }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -31,6 +34,15 @@ export class HttpRequestInterceptor implements HttpInterceptor {
           )
         });
       }
+    }
+
+    if (req.body) {
+      req = req.clone({
+        headers: req.headers.set(
+          'Content-Type',
+          'application/json'
+        )
+      });
     }
 
     return next.handle(req).pipe(

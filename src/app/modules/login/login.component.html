@@ -5,33 +5,33 @@
     <mat-form-field appearance="fill" floatLabel="always">
       <mat-label>Username</mat-label>
       <input
-        matInput
         [(ngModel)]="loginRequest.username"
-        name="username"
-        type="email"
         class="example-right-align"
-        placeholder="firstname.lastname@example.com">
+        matInput
+        name="username"
+        placeholder="firstname.lastname@example.com"
+        type="email">
     </mat-form-field>
 
     <mat-form-field appearance="fill" floatLabel="always">
       <mat-label>Enter your password</mat-label>
       <input
         [(ngModel)]="loginRequest.password"
-        name="password"
-        matInput [type]="hide ? 'password' : 'text'">
+        [type]="hide ? 'password' : 'text'"
+        matInput name="password">
       <button
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide"
         mat-icon-button
-        matSuffix (click)="hide = !hide"
-        [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide">
+        matSuffix>
         <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
       </button>
     </mat-form-field>
   </div>
 
   <button
-    mat-raised-button
     (click)="doLogin()"
+    mat-raised-button
   >
     Login
   </button>

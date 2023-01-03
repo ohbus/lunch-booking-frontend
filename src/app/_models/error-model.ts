@@ -1,7 +1,7 @@
 export class ErrorModel {
   constructor(
-    public message: string,
-    public timestamp: number
+    public message: string = "",
+    public timestamp: number = 0
   ) {
   }
 }
