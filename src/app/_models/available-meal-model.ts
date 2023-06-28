@@ -1,6 +1,6 @@
 export class AvailableMealModel {
 
-  constructor(
+  constructor (
     public id: number = 0,
     public date: string = "1970-01-01",
     public mealOptionId: number = 0,

@@ -12,67 +12,67 @@ import { EventBusService } from "../_services/event-bus.service";
 import { catchError, Observable, throwError } from "rxjs";
 import { EventDataModel } from "../_models/event-data-model";
 
-@Injectable()
+@Injectable ()
 export class HttpRequestInterceptor implements HttpInterceptor {
 
   private isRefreshing = false;
 
-  constructor(
+  constructor (
     private storageService: TokenStorageService,
-    private eventBusService: EventBusService) {
+    private eventBusService: EventBusService ) {
   }
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept ( req: HttpRequest<any>, next: HttpHandler ): Observable<HttpEvent<any>> {
 
-    if (this.storageService.isLoginValid()) {
-      const token = this.storageService.getJwt();
+    if (this.storageService.isLoginValid ()) {
+      const token = this.storageService.getJwt ();
       if (token) {
-        req = req.clone({
-          headers: req.headers.set(
+        req = req.clone ({
+          headers: req.headers.set (
             'Authorization',
-            `Bearer ${token}`
+            `Bearer ${ token }`
           )
         });
       }
     }
 
     if (req.body) {
-      req = req.clone({
-        headers: req.headers.set(
+      req = req.clone ({
+        headers: req.headers.set (
           'Content-Type',
           'application/json'
         )
       });
     }
 
-    return next.handle(req).pipe(
-      catchError((error) => {
+    return next.handle (req).pipe (
+      catchError (( error ) => {
         if (
           error instanceof HttpErrorResponse &&
-          !req.url.includes('login') &&
+          !req.url.includes ('login') &&
           error.status === 401
         ) {
-          return this.handle401Error(req, next);
+          return this.handle401Error (req, next);
         }
-        return throwError(() => error);
+        return throwError (() => error);
       })
     );
   }
 
-  private handle401Error(request: HttpRequest<any>, next: HttpHandler) {
-    if (!this.isRefreshing) {
+  private handle401Error ( request: HttpRequest<any>, next: HttpHandler ) {
+    if ( !this.isRefreshing) {
       this.isRefreshing = true;
 
-      if (this.storageService.isLoggedIn()) {
-        this.eventBusService.emit(new EventDataModel('logout', null));
+      if (this.storageService.isLoggedIn ()) {
+        this.eventBusService.emit (new EventDataModel ('logout', null));
       }
     }
-    return next.handle(request);
+    return next.handle (request);
   }
 }
 
-export const httpInterceptorProviders = [{
+export const httpInterceptorProviders = [ {
   provide: HTTP_INTERCEPTORS,
   useClass: HttpRequestInterceptor,
   multi: true
-}];
+} ];

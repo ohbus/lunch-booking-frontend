@@ -10,7 +10,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { FormsModule } from "@angular/forms";
 
 
-@NgModule({
+@NgModule ({
   declarations: [
     LoginComponent
   ],

@@ -1,5 +1,5 @@
 export class FoundModel {
-  constructor(
+  constructor (
     public found: boolean = false,
   ) {
   }

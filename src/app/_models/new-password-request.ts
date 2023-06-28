@@ -1,5 +1,5 @@
 export class NewPasswordRequest {
-  constructor(
+  constructor (
     public newPassword: string = ""
   ) {
   }

@@ -1,5 +1,5 @@
 export class EventDataModel {
-  constructor(
+  constructor (
     public name: string = "",
     public value: any
   ) {

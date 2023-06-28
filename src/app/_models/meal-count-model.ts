@@ -1,5 +1,5 @@
 export class MealCountModel {
-  constructor(
+  constructor (
     public redeemed: number = 0,
     public available: number = 0,
     public total: number = 0

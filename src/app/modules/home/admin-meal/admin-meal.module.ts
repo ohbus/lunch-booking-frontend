@@ -5,7 +5,7 @@ import { AdminMealRoutingModule } from './admin-meal-routing.module';
 import { AdminMealComponent } from './admin-meal.component';
 
 
-@NgModule({
+@NgModule ({
   declarations: [
     AdminMealComponent
   ],

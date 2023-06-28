@@ -1,5 +1,5 @@
 export class OtpSaltModel {
-  constructor(
+  constructor (
     public salt: number = 0
   ) {
   }

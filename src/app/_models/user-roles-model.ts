@@ -1,5 +1,5 @@
 export class UserRolesModel {
-  constructor(
+  constructor (
     public roles: string[]
   ) {
   }

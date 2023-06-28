@@ -1,5 +1,5 @@
 export class JwtTokenModel {
-  constructor(
+  constructor (
     public jwtToken: string = ""
   ) {
   }

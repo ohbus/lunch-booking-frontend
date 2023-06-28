@@ -22,7 +22,7 @@ import { EventBusService } from "./_services/event-bus.service";
 import { httpInterceptorProviders } from "./_helpers/http.interceptor";
 import { LoginModule } from "./modules/login/login.module";
 
-@NgModule({
+@NgModule ({
   declarations: [
     AppComponent
   ],
@@ -31,14 +31,14 @@ import { LoginModule } from "./modules/login/login.module";
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    NgProgressModule.withConfig({
+    NgProgressModule.withConfig ({
       trickleSpeed: 100,
       min: 20,
       color: "yellow",
       thick: true
     }),
-    NgProgressHttpModule.withConfig({
-      silentApis: ['check']
+    NgProgressHttpModule.withConfig ({
+      silentApis: [ 'check' ]
     }),
     RouterModule,
     NgProgressRouterModule,
@@ -58,7 +58,7 @@ import { LoginModule } from "./modules/login/login.module";
     EventBusService,
     UserService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {
 }

@@ -1,9 +1,9 @@
 export class SignupRequestModel {
-  constructor(
+  constructor (
     public emailId: string = "",
     public password: string = "",
     public firstName: string = "",
     public lastName: string = "",
-    public mobile: string) {
+    public mobile: string ) {
   }
 }

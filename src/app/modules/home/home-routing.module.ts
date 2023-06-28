@@ -20,11 +20,11 @@ const routes: Routes = [ {
       loadChildren: () => import('./admin-users/admin-users.module').then (m => m.AdminUsersModule)
     }
   ]
-}];
+} ];
 
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+@NgModule ({
+  imports: [ RouterModule.forChild (routes) ],
+  exports: [ RouterModule ]
 })
 export class HomeRoutingModule {
 }

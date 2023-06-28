@@ -2,24 +2,24 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
 
-describe('LoginComponent', () => {
+describe ('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [LoginComponent]
+  beforeEach (async () => {
+    await TestBed.configureTestingModule ({
+      declarations: [ LoginComponent ]
     })
-      .compileComponents();
+      .compileComponents ();
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(LoginComponent);
+  beforeEach (() => {
+    fixture = TestBed.createComponent (LoginComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.detectChanges ();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it ('should create', () => {
+    expect (component).toBeTruthy ();
   });
 });

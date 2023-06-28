@@ -1,7 +1,7 @@
 import { SignupRequestModel } from './signup-request-model';
 
-describe('SignupRequestModel', () => {
-  it('should create an instance', () => {
-    expect(new SignupRequestModel()).toBeTruthy();
+describe ('SignupRequestModel', () => {
+  it ('should create an instance', () => {
+    expect (new SignupRequestModel ()).toBeTruthy ();
   });
 });

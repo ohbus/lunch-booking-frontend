@@ -1,5 +1,5 @@
 export class CreateBookingResponseModel {
-  constructor(
-    public id: number = 0) {
+  constructor (
+    public id: number = 0 ) {
   }
 }

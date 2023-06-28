@@ -1,7 +1,7 @@
 import { UserResponseModel } from "./user-response-model";
 
 export class LoginResponseModel {
-  constructor(
+  constructor (
     public jwtToken: string,
     public user: UserResponseModel
   ) {

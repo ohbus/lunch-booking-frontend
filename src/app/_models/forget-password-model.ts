@@ -1,5 +1,5 @@
 export class ForgetPasswordModel {
-  constructor(
+  constructor (
     public username: string = "",
   ) {
   }

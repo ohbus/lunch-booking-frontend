@@ -1,5 +1,5 @@
 export class ErrorModel {
-  constructor(
+  constructor (
     public message: string = "",
     public timestamp: number = 0
   ) {

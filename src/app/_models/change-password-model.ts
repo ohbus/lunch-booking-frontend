@@ -1,5 +1,5 @@
 export class ChangePasswordModel {
-  constructor(
+  constructor (
     public currentPassword: string = "",
     public updatedPassword: string = ""
   ) {

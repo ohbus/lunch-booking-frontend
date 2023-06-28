@@ -5,7 +5,7 @@ import { AdminUsersRoutingModule } from './admin-users-routing.module';
 import { AdminUsersComponent } from './admin-users.component';
 
 
-@NgModule({
+@NgModule ({
   declarations: [
     AdminUsersComponent
   ],

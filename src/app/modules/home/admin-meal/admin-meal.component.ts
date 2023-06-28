@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
+@Component ({
   selector: 'app-admin-meal',
   templateUrl: './admin-meal.component.html',
-  styleUrls: ['./admin-meal.component.css']
+  styleUrls: [ './admin-meal.component.css' ]
 })
 export class AdminMealComponent implements OnInit {
 
-  constructor() {
+  constructor () {
   }
 
-  ngOnInit(): void {
+  ngOnInit (): void {
   }
 
 }
