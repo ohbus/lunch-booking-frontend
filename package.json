@@ -21,16 +21,16 @@
     "@angular/platform-browser-dynamic": "^15.2.9",
     "@angular/router": "^15.2.9",
     "@angular/service-worker": "^15.2.9",
-    "@auth0/angular-jwt": "^5.1.0",
+    "@auth0/angular-jwt": "^5.1.2",
     "@zxing/browser": "^0.1.1",
-    "@zxing/library": "^0.19.1",
+    "@zxing/library": "^0.20.0",
     "@zxing/ngx-scanner": "^3.8.0",
     "angularx-qrcode": "^15.0.0",
     "jwt-decode": "^3.1.2",
     "ngx-progressbar": "^9.0.0",
-    "rxjs": "~7.5.0",
     "tslib": "^2.5.3",
-    "zone.js": "~0.12.0"
+    "rxjs": "~7.8.1",
+    "zone.js": "~0.13.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.9",
